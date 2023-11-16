@@ -50,9 +50,13 @@ def get_network(use_biases: bool) -> Network:
 
 To do the FFBP algorithm, do the following:
 ```py 
-for epoch in range(num_epochs):     # Go through each training epoch we're required to do.
-    for i in range(X.shape[0]):   # For each piece of data we need to process. 
-        curr_out: np.ndarray = network.feedforward(X[i, :])   # Get the current output from the network. 
-        network.backprop(lr, y[i, :]) # Train the network using the learning rate and the desired output.
+# Go through each training epoch we're required to do.
+for epoch in range(num_epochs):     
+    # For each piece of data we need to process.
+    for i in range(X.shape[0]): 
+        # Get the current output from the network.
+        curr_out: np.ndarray = network.feedforward(X[i, :])
+        # Train the network using the learning rate and the desired output.    
+        network.backprop(lr, y[i, :]) 
 ```
 
